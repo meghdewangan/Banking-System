@@ -1,0 +1,49 @@
+<% layout('layout/village') %>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="card">
+                    <div class="card-header bg-info">
+                        <h1>Tranfer Money</h1>
+                    </div>
+                    <div class="card-body">
+                        <form action="/accounts/<%=cs.id%>/transfer" method="POST" class="needs-validation" novalidate>
+                            <div class="input-group mb-3">
+                                <label class="input-group-text bg-info" for="form">From: </label>
+                                <select class="form-select" name="sender" id="from">
+                                    <% for(let c of cus) { %>
+                                        <option style="text-transform: capitalize;" value="<%= c._id %>"
+                                            <%=c.accountNumber===cs.accountNumber?'selected':'disabled' %> ><%=c.name%>(<%= c.accountNumber%>)
+                                        </option> <!-- Terenary Operator added so that one cannot select other -->
+                                        <% } %>
+                                </select>
+                            </div>
+                            <div class="input-group mb-3">
+                                <label class="input-group-text bg-info" for="cati">Transfer to:</label>
+                                <select class="form-select" name="receiver" id="cati">
+                                    <% for(let c of cus) { %>
+                                        <option style="text-transform: capitalize;" value="<%= c._id %>"
+                                            <%=c.accountNumber===cs.accountNumber?'disabled':'' %> ><%=c.name%>(<%= c.accountNumber%>)
+                                        </option> <!-- Terenary Operator added so that one cannot select themselves -->
+                                        <% } %>
+                                </select>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text bg-info">Amount Rs</span>
+                                <input type="number" class="form-control" name="deposit" required min="0">
+                                <span class="input-group-text bg-info">.00</span>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                  </div>
+                                  <div class="invalid-feedback">
+                                    Enter Amount
+                                  </div>
+                            </div>
+                            <button class="btn btn-success">Transfer</button>
+                            <a class="btn btn-dark" href="/accounts">Back to Home</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

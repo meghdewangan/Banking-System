@@ -1,0 +1,59 @@
+<% layout('layout/village') %>
+<div> 
+                <h1><%= account.name %> </h1>
+                <table class="table ">
+                    <tr>
+                        <td >Holder Name</td>
+                        <th><%= account.name %></th>
+                        <td>Account Number</td>
+                        <th><%= account.accountNumber %></th>
+                        <td>Branch Name</td>
+                        <th><%= account.branch %></th>
+                    </tr>
+                    <tr>
+                        <td>current Balance</td>
+                        <th><%= account.balance%>
+                        <td>Account Type</td>
+                        <th><%= account.accountType %></th>
+                        <td>Contact</td>
+                        <th><%= account.contactNumber %></th>
+                    </tr>
+                    <tr>
+                        <td>City</td>
+                        <th><%= account.city %></th>
+                        <td>Address</td>
+                        <th><%= account.address%></th>
+                        <td>Email</td>
+                        <th><%= account.email %></th>
+                    </tr>
+            <table>
+    </div>              
+
+        <div>  
+            <form action="/accounts/<%=account.id%>?_method=DELETE" method="POST">
+                <button class="btn btn-outline-danger" >DELETE</button>
+            </form>
+            <a href="/accounts/<%=account.id%>/edit" class="btn btn-outline-dark">edit</a>
+            <a href="/accounts/<%= account.id %>/transfer" class="btn btn-outline-info">Transfer</a>
+            <a class="btn btn-outline-dark" href="/accounts">Back to Home</a>
+        </div>
+
+       
+        <div>
+            <% for(let trans of transaction){ %>
+              <div class="card-body">
+                  <div class="card-header bg-info">
+                      <%= trans.Date.toLocaleDateString() %>
+                  </div>
+                  <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+          
+                      <p><%= trans.Description  %> </p>
+                      <footer class="blockquote-footer"><%= trans.Date%></footer>
+                    </blockquote>
+                  </div>
+                </div>
+                <% } %> 
+           </div>
+       
+            

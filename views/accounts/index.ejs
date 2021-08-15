@@ -1,0 +1,36 @@
+<% layout('layout/village') %>
+    <h1>All Bank Accounts</h1>
+
+    <table class="table table-hover">
+        <tr class="table-active">
+            <th scope="col">#</th>
+            <th >Holder Name</th>
+            <th>Account Number</th>
+            <th>Branch Name</th>
+            <th>current Balance</th>
+            <th>Account Type</th>
+            <th>Contact</th>
+            <th></th>
+        </tr>
+        <% var no = 1 %>
+        <% for (let ac of accounts){ %> 
+        <tr>
+            <th> <%= no++ %>  </th>
+            <td><%= ac.name %> </td>
+            <td><%= ac.accountNumber %></td>
+            <td><%= ac.branch %></td>
+            <td><%= ac.balance%></td>
+            <td><%= ac.accountType %></td>
+            <td><%= ac.contactNumber %></td>
+            <td>
+                <div class="btn-group">
+                    <a href="/accounts/<%=ac.id%>" class="btn btn-outline-success btn-sm">Details</a>
+                    <form action="/accounts/<%=ac.id%>?_method=DELETE" method="POST">
+                        <button  class="btn btn-outline-danger btn-sm">DELETE</button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+        <% } %> 
+    </table>
+
