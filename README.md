@@ -4,7 +4,7 @@ The Spark Foundation Conduct Internship Program To Help Students Be Ready For Wh
 is working to bring parity in education, making sure children have equal opportunity at success, irrespective of the financial background.
 There are many tasks in internship and interns do those tasks on their own. So out of all the tasks, I chose the basic banking system task.
 </p>
-//img1
+<p align "center"> <img src="https://user-images.githubusercontent.com/77229655/129480746-03cb2285-0ad5-402a-a5c2-fff1f5e6408f.png" /> </p>
 
 <h1 align="center"> Basic-Banking System </h1>
 <p>
@@ -12,10 +12,10 @@ There are many tasks in internship and interns do those tasks on their own. So o
      In this task I have used mongodb, Express, Node.js and some other libearys.This task describes all the constructions
      of the Basic Banking System.In which you can open a new account of the user, edit his account. 
      You can transfer money from his account to another account.
-     //img2
-     //img3
-     //img4
-     //img5
+     <p align "center"> <img src="https://user-images.githubusercontent.com/77229655/129481339-3411c759-21f8-409d-806a-998e03bba068.png" /> </p>
+     <p align "center"> <img src="https://user-images.githubusercontent.com/77229655/129481420-dc01ba91-5064-4a46-94ed-102e203e43cc.png" /> </p>
+     <p align "center"> <img src="https://user-images.githubusercontent.com/77229655/129481460-b7588d89-7c26-4d94-bacb-076f6fdacc00.png" /> </p>
+     <p align "center"> <img src="https://user-images.githubusercontent.com/77229655/129481505-6a1f1ace-20bb-4f97-a753-76148855ac29.png" /> </p>
 </p>
 
 <h2 align="center"> Choosing Dependencies </h2>
@@ -71,17 +71,13 @@ For our UI we decided to go with a react-bootstrap package.
 <h1 align="center">Technologies</h1>
 <p>
  <h4> FRONT END </h4>
-## javaScript
-## Bootstrap
-## css
-## ejs
+ javaScript, Bootstrap, css, ejs
    
 <h4> BACK END </h4>   
-## Express
-## Node.js
+ Express, Node.js
 
 <h4> DATABASE </h4>
-## Mongoose
+ Mongoose
 </p>
 
 
