@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const Transaction = require("./model/transaction");
 const Account = require('./model/account')
 mongoose.connect('mongodb://localhost:27017/bank-system',{useNewUrlParser:true,useCreateIndex:true,useUnifiedTopology:true})
+const port = process.env.PORT || 3000 ;
 
 const db = mongoose.connection;
 db.on('error',console.log.bind(console,"connection error")) 
@@ -113,6 +114,6 @@ app.delete('/accounts/:id',async(req,res) => {
     res.redirect('/accounts')
 })
 
-app.listen(3000,() => {
+app.listen(port,() => {
     console.log('I AM ACTIVATED');
 })
